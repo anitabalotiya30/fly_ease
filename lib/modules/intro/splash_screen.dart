@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../widgets/custom_loading.dart';
-import '../../widgets/logo.dart';
+import '../../utils/widgets/custom_loading.dart';
+import '../../utils/widgets/logo.dart';
 import '../sign_up/sign_up_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 300),
+    Future.delayed(const Duration(milliseconds: 1500),
         () => Get.off(() => const SignupScreen()));
   }
 

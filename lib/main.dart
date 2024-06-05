@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mq = MediaQuery.sizeOf(context);
-    const borderRadius = BorderRadius.all(Radius.circular(26));
+    const borderRadius = BorderRadius.all(Radius.circular(16));
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: appName,
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
 
         //
         theme: ThemeData(
-            fontFamily: 'Lato',
+            fontFamily: 'Montserrat',
             useMaterial3: false,
 
             // set default theme for appbar
@@ -52,11 +52,10 @@ class MyApp extends StatelessWidget {
             inputDecorationTheme: const InputDecorationTheme(
                 isDense: true,
                 // filled: true,
-                // fillColor: sColor,
 
                 // focus border style
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black26),
+                    borderSide: BorderSide(color: Colors.white),
                     borderRadius: borderRadius),
 
                 // focus border style
