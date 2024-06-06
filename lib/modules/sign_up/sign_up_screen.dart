@@ -163,28 +163,10 @@ class SignupScreen extends StatelessWidget {
                   //
                   child: InkWell(
                       onTap: () {
-                        // var a = [1, 2, 3];
-                        // var b = [4, 5, 6];
-                        // a.addAll(b);
-                        // a.sort();
-                        log('numbers ----');
-
-                        final numbers = <int>[2, 4, 3];
-                        // Sort from shortest to longest.
-                        numbers.sort((a, b) => a.compareTo(b));
-
-                        log('numbers ---- $numbers');
-
-                        // int temp = a[0];
-                        // for (int i = 0; i < a.length; i++) {
-                        //   for (int j = i + 1; j < a.length; j++) {
-                        //     if (a[i] > a[j]) {
-                        //       temp = a[i];
-                        //       a[i] = a[j];
-                        //       a[j] = temp;
-                        //     }
-                        //   }
-                        // }
+                        var a = [1, 2, 3];
+                        var b = [4, 5, 6];
+                        a.addAll(b);
+                        a.sort();
                       },
                       //
                       child: Image.asset(StrConst.colors,
