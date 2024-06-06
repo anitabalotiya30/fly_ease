@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../helper/global.dart';
+
 class CustomTextField extends StatelessWidget {
   final TextEditingController etText;
-  // final String label;
+  final String label;
   final Widget? prefixIcon;
   final TextInputType? textInputType;
   final Function(String)? onChanged;
@@ -10,25 +12,54 @@ class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {super.key,
       required this.etText,
-      // required this.label,
+      required this.label,
       this.prefixIcon,
       this.textInputType,
       this.onChanged});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-        cursorColor: Colors.black45,
-        keyboardType: textInputType ?? TextInputType.text,
-        controller: etText,
-        onChanged: onChanged,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+
+      //
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+              color: textColor, fontSize: 13, fontWeight: FontWeight.w500),
+        ),
+
         //
-        decoration: InputDecoration(
-          prefixIcon: prefixIcon,
-          contentPadding:
-              const EdgeInsets.only(left: 18, right: 12, top: 12, bottom: 12),
+        Container(
+          margin: EdgeInsets.only(top: mq.height * .02),
 
           //
-        ));
+          decoration: const BoxDecoration(boxShadow: [
+            BoxShadow(
+                color: Color(0Xffedf6f9),
+                blurRadius: 8,
+                blurStyle: BlurStyle.outer,
+                spreadRadius: 4,
+                offset: Offset(1, 1))
+          ]),
+
+          //
+          child: TextField(
+              cursorColor: Colors.black45,
+              keyboardType: textInputType ?? TextInputType.text,
+              controller: etText,
+              onChanged: onChanged,
+              //
+              decoration: InputDecoration(
+                prefixIcon: prefixIcon,
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
+
+                //
+              )),
+        ),
+      ],
+    );
   }
 }

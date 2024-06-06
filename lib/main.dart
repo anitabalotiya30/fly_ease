@@ -26,7 +26,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mq = MediaQuery.sizeOf(context);
-    const borderRadius = BorderRadius.all(Radius.circular(16));
+    const borderRadius = BorderRadius.all(Radius.circular(8));
+
+    //
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: appName,
@@ -55,12 +57,12 @@ class MyApp extends StatelessWidget {
 
                 // focus border style
                 enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
+                    borderSide: BorderSide(color: Colors.black12),
                     borderRadius: borderRadius),
 
                 // focus border style
                 focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black38),
+                    borderSide: BorderSide(color: Colors.black26),
                     borderRadius: borderRadius))),
 
         //
