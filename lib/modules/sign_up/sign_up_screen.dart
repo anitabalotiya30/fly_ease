@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../../helper/global.dart';
@@ -10,6 +12,9 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
+
+      //
       body: Stack(children: [
         //
         Image.asset(StrConst.signIn),
@@ -21,7 +26,7 @@ class SignupScreen extends StatelessWidget {
           //
           child: Padding(
             padding: EdgeInsets.only(
-                top: mq.height * .2,
+                top: mq.height * .18,
                 right: mq.width * .14,
                 left: mq.width * .04),
 
@@ -60,102 +65,131 @@ class SignupScreen extends StatelessWidget {
         ),
 
         /// container inside container
-        Align(
-          child: Container(
-            margin: EdgeInsets.only(top: mq.height * .38),
-            height: mq.height,
-            width: mq.width,
+        Stack(
+          children: [
+            Align(
+              child: Container(
+                margin: EdgeInsets.only(top: mq.height * .38),
+                height: mq.height,
+                width: mq.width,
 
-            //
-            decoration: const BoxDecoration(
-              //
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(34), topRight: Radius.circular(34)),
-
-              //
-              gradient: SweepGradient(colors: [
-                Colors.white,
-                Colors.amber,
-                Colors.blue,
-                Colors.purple,
-                Colors.orange,
-                Colors.green,
-              ], center: Alignment.center, startAngle: 3.2, endAngle: 5.4),
-            ),
-          ),
-        ),
-
-        Align(
-          child: Container(
-            margin: EdgeInsets.only(top: mq.width * .84),
-            padding: EdgeInsets.symmetric(horizontal: mq.width * .04),
-
-            //
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(38),
-                    topRight: Radius.circular(38))),
-
-            //
-            child: Stack(
-              children: [
-                Align(
-                    child: Padding(
-                  padding: EdgeInsets.only(bottom: mq.height * .8),
-                  child: const Text(
-                    'data',
-                    style: TextStyle(color: Colors.amber),
-                  ),
-                )),
-                Column(
-                  // physics: const NeverScrollableScrollPhysics(),
+                //
+                decoration: const BoxDecoration(
+                  //
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(34),
+                      topRight: Radius.circular(34)),
 
                   //
+                  gradient: SweepGradient(colors: [
+                    Colors.white,
+                    Colors.amber,
+                    Colors.blue,
+                    Colors.purple,
+                    Colors.orange,
+                    Colors.green,
+                  ], center: Alignment.center, startAngle: 3.2, endAngle: 5.4),
+                ),
+              ),
+            ),
+
+            //
+            Align(
+              child: Container(
+                margin: EdgeInsets.only(top: mq.height * .39),
+                padding: EdgeInsets.symmetric(horizontal: mq.width * .04),
+
+                //
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(38),
+                        topRight: Radius.circular(38))),
+
+                //
+                child: ListView(
                   children: [
-                    const Text(
-                      'FIRST NAME',
-                      style: TextStyle(
-                          color: textColor,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500),
+                    //
+                    CustomTextField(
+                      etText: TextEditingController(),
+                      label: 'FIRST NAME',
                     ),
-                    Container(
-                        margin: EdgeInsets.only(top: mq.height * .03),
+                    SizedBox(height: mq.height * .02),
 
-                        //
-                        decoration: const BoxDecoration(boxShadow: [
-                          BoxShadow(
-                              color: Color(0Xffedf6f9),
-                              blurRadius: 8,
-                              blurStyle: BlurStyle.outer,
-                              spreadRadius: 4,
-                              offset: Offset(1, 1))
-                        ]),
+                    //
+                    CustomTextField(
+                      label: 'LAST NAME',
+                      etText: TextEditingController(),
+                    ),
+                    SizedBox(height: mq.height * .02),
 
-                        //
-                        child: CustomTextField(
-                          etText: TextEditingController(),
-                        ))
+                    //
+                    CustomTextField(
+                      label: 'EMAIL',
+                      etText: TextEditingController(),
+                    ),
+                    SizedBox(height: mq.height * .02),
+
+                    //
+                    CustomTextField(
+                      label: 'PASSWORD',
+                      etText: TextEditingController(),
+                    ),
+                    SizedBox(height: mq.height * .02),
+
+                    //
+                    CustomTextField(
+                      label: 'CONFIRM PASSWORD',
+                      etText: TextEditingController(),
+                    ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
+
+            //
+            Align(
+              alignment: Alignment.centerRight,
+
+              //
+              child: Padding(
+                padding: EdgeInsets.only(bottom: mq.height * .17),
+
+                //
+                child: InkWell(
+                    onTap: () {
+                      // var a = [1, 2, 3];
+                      // var b = [4, 5, 6];
+                      // a.addAll(b);
+                      // a.sort();
+                      log('numbers ----');
+
+                      final numbers = <int>[2, 4, 3];
+                      // Sort from shortest to longest.
+                      numbers.sort((a, b) => a.compareTo(b));
+
+                      log('numbers ---- $numbers');
+
+                      // int temp = a[0];
+                      // for (int i = 0; i < a.length; i++) {
+                      //   for (int j = i + 1; j < a.length; j++) {
+                      //     if (a[i] > a[j]) {
+                      //       temp = a[i];
+                      //       a[i] = a[j];
+                      //       a[j] = temp;
+                      //     }
+                      //   }
+                      // }
+                    },
+                    //
+                    child:
+                        Image.asset(StrConst.colors, height: mq.height * .16)),
+              ),
+            ),
+          ],
         ),
 
         //
-        Align(
-          alignment: Alignment.centerRight,
-
-          //
-          child: Padding(
-            padding: EdgeInsets.only(bottom: mq.height * .17),
-
-            //
-            child: Image.asset(StrConst.colors, height: mq.height * .16),
-          ),
-        ),
       ]),
     );
   }
