@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utils/constants/str_const.dart';
 import '../../utils/services/api_services.dart';
 import '../../utils/services/pref.dart';
 import '../../utils/widgets/custom_loading.dart';
@@ -38,6 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    precacheImage(const AssetImage(StrConst.signupPage), context);
+    //
     return const Scaffold(
       body: SizedBox(
         width: double.maxFinite,

@@ -1,4 +1,4 @@
-package com.example.fly_ease
+package com.airline.flyease
 
 import io.flutter.embedding.android.FlutterActivity
 

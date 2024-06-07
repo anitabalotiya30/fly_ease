@@ -46,18 +46,19 @@ class CustomTextField extends StatelessWidget {
 
           //
           child: TextField(
-              cursorColor: Colors.black45,
-              keyboardType: textInputType ?? TextInputType.text,
-              controller: etText,
-              onChanged: onChanged,
-              //
-              decoration: InputDecoration(
-                prefixIcon: prefixIcon,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+            cursorColor: Colors.black45,
+            keyboardType: textInputType ?? TextInputType.text,
+            controller: etText,
+            onChanged: onChanged,
+            style: const TextStyle(fontWeight: FontWeight.bold),
 
-                //
-              )),
+            //
+            decoration: InputDecoration(
+              prefixIcon: prefixIcon,
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
+            ),
+          ),
         ),
       ],
     );

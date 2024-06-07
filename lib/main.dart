@@ -36,36 +36,37 @@ class MyApp extends StatelessWidget {
         title: appName,
         color: pColor,
 
-        //
+        // setting default app theme
         theme: ThemeData(
-            fontFamily: 'Montserrat',
-            useMaterial3: false,
+          fontFamily: 'Montserrat',
+          useMaterial3: false,
 
-            // set default theme for appbar
-            appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.white,
-                elevation: 0,
-                centerTitle: true,
-                iconTheme: IconThemeData(color: Colors.black),
-                titleTextStyle: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black)),
+          // set default theme for appbar
+          appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              centerTitle: true,
+              iconTheme: IconThemeData(color: Colors.black),
+              titleTextStyle: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black)),
 
-            // set default theme for textField
-            inputDecorationTheme: const InputDecorationTheme(
-                isDense: true,
-                // filled: true,
+          // set default theme for textField
+          inputDecorationTheme: const InputDecorationTheme(
+            isDense: true,
 
-                // focus border style
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black12),
-                    borderRadius: borderRadius),
+            // focus border style
+            enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.black12),
+                borderRadius: borderRadius),
 
-                // focus border style
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.black26),
-                    borderRadius: borderRadius))),
+            // focus border style
+            focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.black26),
+                borderRadius: borderRadius),
+          ),
+        ),
 
         //
         home: const SplashScreen());

@@ -32,9 +32,8 @@ class SigninScreen extends StatelessWidget {
         resizeToAvoidBottomInset: true,
 
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          iconTheme: const IconThemeData(color: Colors.white),
-        ),
+            backgroundColor: Colors.transparent,
+            iconTheme: const IconThemeData(color: Colors.white)),
 
         //
         body: Padding(
