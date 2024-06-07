@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utils/services/api_services.dart';
+import '../../utils/services/pref.dart';
 import '../../utils/widgets/custom_loading.dart';
 import '../../utils/widgets/logo.dart';
-import '../sign_up/sign_up_screen.dart';
+import '../auth/sign_up/sign_up_screen.dart';
+import '../home/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,11 +16,24 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool exists = false;
+  final userToken = Pref.userToken;
+
+  //
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 1500),
-        () => Get.off(() => const SignupScreen()));
+
+    Future.delayed(const Duration(milliseconds: 1000), () async {
+      await authenticateUser();
+      Get.off(() => exists ? const HomeScreen() : SignupScreen());
+    });
+  }
+
+  Future<void> authenticateUser() async {
+    if (userToken.isNotEmpty) {
+      exists = await ApiServices.getUserProfile(accessToken: userToken);
+    }
   }
 
   @override

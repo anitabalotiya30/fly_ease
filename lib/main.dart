@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'helper/global.dart';
 import 'modules/intro/splash_screen.dart';
+import 'utils/services/pref.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // await Hive.initFlutter().then((value) async => await Pref.initializeHive());
+  await Hive.initFlutter().then((value) async => await Pref.initializeHive());
 
   //enter full-screen
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);

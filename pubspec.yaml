@@ -27,7 +27,7 @@ dependencies:
   internet_connection_checker: ^1.0.0
 
   # Network requests
-  http: ^1.1.0
+  http: ^1.2.1
 
   # For storing data (in local storage)
   hive: ^2.2.3

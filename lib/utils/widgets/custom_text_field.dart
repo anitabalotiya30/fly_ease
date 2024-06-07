@@ -27,12 +27,12 @@ class CustomTextField extends StatelessWidget {
         Text(
           label,
           style: const TextStyle(
-              color: textColor, fontSize: 13, fontWeight: FontWeight.w500),
+              color: textColor, fontSize: 12, fontWeight: FontWeight.w500),
         ),
 
         //
         Container(
-          margin: EdgeInsets.only(top: mq.height * .02),
+          margin: EdgeInsets.only(top: mq.height * .012),
 
           //
           decoration: const BoxDecoration(boxShadow: [
@@ -54,7 +54,7 @@ class CustomTextField extends StatelessWidget {
               decoration: InputDecoration(
                 prefixIcon: prefixIcon,
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
 
                 //
               )),
