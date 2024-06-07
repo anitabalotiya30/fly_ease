@@ -1,6 +1,6 @@
 # fly_ease
 
-A new Flutter project.
+This is the README file for the test assignment e-commerce app developed using the Flutter framework, Dart programming language, and Getx state management.
 
 ## Getting Started
 
